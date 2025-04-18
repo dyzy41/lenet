@@ -210,7 +210,7 @@ class BASNet(nn.Module):
         #==================Backbone=========================#
 
         try:
-            self.resnet = timm.create_model('resnet18', pretrained=True, pretrained_cfg_overlay=dict(file='pretrained/resnet50.a1_in1k/pytorch_model.bin'), features_only=True)
+            self.resnet = timm.create_model('resnet18', pretrained=True, pretrained_cfg_overlay=dict(file='pretrained/resnet18.a1_in1k/pytorch_model.bin'), features_only=True)
         except:
             self.resnet = timm.create_model('resnet18', pretrained=True, features_only=True)
 
