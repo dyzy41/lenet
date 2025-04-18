@@ -28,6 +28,233 @@ from .dminet import DMINet
 from .CDNeXt.cdnext import CDNeXt
 from .GASNet import GASNet
 from .hanet import HANet
+from .isdanet import ISDANet
+from .STRobustNet.STRobustNet import STRobustNet
+from .ScratchFormer.scratch_former import ScratchFormer
+from .DARNet.DARNet import DARNet
+from .BASNet import BASNet
+
+
+
+@MODELS.register_module()
+class MM_BASNet(EncoderDecoder):
+    def __init__(
+        self,
+        backbone: ConfigType = None,
+        decode_head: ConfigType = None,
+        neck: OptConfigType = None,
+        auxiliary_head: OptConfigType = None,
+        train_cfg: OptConfigType = None,
+        test_cfg: OptConfigType = None,
+        data_preprocessor: OptConfigType = None,
+        pretrained: Optional[str] = None,
+        init_cfg: OptMultiConfig = None,
+    ):
+        super().__init__(backbone=backbone, decode_head=decode_head, data_preprocessor=data_preprocessor, init_cfg=init_cfg)
+
+        self.model = BASNet()    
+        self._init_decode_head(decode_head)
+        self._init_auxiliary_head(auxiliary_head)
+
+        self.train_cfg = train_cfg
+        self.test_cfg = test_cfg
+
+    def encode_decode(self, inputs: Tensor,
+                      batch_img_metas: List[dict]) -> Tensor:
+        imgs1, imgs2 = inputs[:, :3, :, :], inputs[:, 3:, :, :]
+        change_maps = self.model(imgs1, imgs2)
+        seg_logits = self.decode_head.predict(change_maps, batch_img_metas,
+                                        self.test_cfg)
+        return seg_logits
+
+    def loss(self, inputs: Tensor, data_samples: SampleList) -> dict:
+        losses = dict()
+
+        imgs1, imgs2 = inputs[:, :3, :, :], inputs[:, 3:, :, :]
+        change_maps = self.model(imgs1, imgs2)
+        loss_decode = self._decode_head_forward_train(change_maps, data_samples)
+        losses.update(loss_decode)
+        if self.with_auxiliary_head:
+            loss_aux = self._auxiliary_head_forward_train(change_maps, data_samples)
+            losses.update(loss_aux)
+        return losses
+
+
+@MODELS.register_module()
+class MM_DARNet(EncoderDecoder):
+    def __init__(
+        self,
+        backbone: ConfigType = None,
+        decode_head: ConfigType = None,
+        neck: OptConfigType = None,
+        auxiliary_head: OptConfigType = None,
+        train_cfg: OptConfigType = None,
+        test_cfg: OptConfigType = None,
+        data_preprocessor: OptConfigType = None,
+        pretrained: Optional[str] = None,
+        init_cfg: OptMultiConfig = None,
+    ):
+        super().__init__(backbone=backbone, decode_head=decode_head, data_preprocessor=data_preprocessor, init_cfg=init_cfg)
+
+        self.model = DARNet()    
+        self._init_decode_head(decode_head)
+        self._init_auxiliary_head(auxiliary_head)
+
+        self.train_cfg = train_cfg
+        self.test_cfg = test_cfg
+
+    def encode_decode(self, inputs: Tensor,
+                      batch_img_metas: List[dict]) -> Tensor:
+        imgs1, imgs2 = inputs[:, :3, :, :], inputs[:, 3:, :, :]
+        change_maps = self.model(imgs1, imgs2)
+        seg_logits = self.decode_head.predict(change_maps, batch_img_metas,
+                                        self.test_cfg)
+        return seg_logits
+
+    def loss(self, inputs: Tensor, data_samples: SampleList) -> dict:
+        losses = dict()
+
+        imgs1, imgs2 = inputs[:, :3, :, :], inputs[:, 3:, :, :]
+        change_maps = self.model(imgs1, imgs2)
+        loss_decode = self._decode_head_forward_train(change_maps, data_samples)
+        losses.update(loss_decode)
+        if self.with_auxiliary_head:
+            loss_aux = self._auxiliary_head_forward_train(change_maps, data_samples)
+            losses.update(loss_aux)
+        return losses
+
+
+@MODELS.register_module()
+class MM_ScratchFormer(EncoderDecoder):
+    def __init__(
+        self,
+        backbone: ConfigType = None,
+        decode_head: ConfigType = None,
+        neck: OptConfigType = None,
+        auxiliary_head: OptConfigType = None,
+        train_cfg: OptConfigType = None,
+        test_cfg: OptConfigType = None,
+        data_preprocessor: OptConfigType = None,
+        pretrained: Optional[str] = None,
+        init_cfg: OptMultiConfig = None,
+    ):
+        super().__init__(backbone=backbone, decode_head=decode_head, data_preprocessor=data_preprocessor, init_cfg=init_cfg)
+
+        self.model = ScratchFormer()    
+        self._init_decode_head(decode_head)
+        self._init_auxiliary_head(auxiliary_head)
+
+        self.train_cfg = train_cfg
+        self.test_cfg = test_cfg
+
+    def encode_decode(self, inputs: Tensor,
+                      batch_img_metas: List[dict]) -> Tensor:
+        imgs1, imgs2 = inputs[:, :3, :, :], inputs[:, 3:, :, :]
+        change_maps = self.model(imgs1, imgs2)
+        seg_logits = self.decode_head.predict(change_maps, batch_img_metas,
+                                        self.test_cfg)
+        return seg_logits
+
+    def loss(self, inputs: Tensor, data_samples: SampleList) -> dict:
+        losses = dict()
+
+        imgs1, imgs2 = inputs[:, :3, :, :], inputs[:, 3:, :, :]
+        change_maps = self.model(imgs1, imgs2)
+        loss_decode = self._decode_head_forward_train(change_maps, data_samples)
+        losses.update(loss_decode)
+        if self.with_auxiliary_head:
+            loss_aux = self._auxiliary_head_forward_train(change_maps, data_samples)
+            losses.update(loss_aux)
+        return losses
+
+
+
+@MODELS.register_module()
+class MM_STRobustNet(EncoderDecoder):
+    def __init__(
+        self,
+        backbone: ConfigType = None,
+        decode_head: ConfigType = None,
+        neck: OptConfigType = None,
+        auxiliary_head: OptConfigType = None,
+        train_cfg: OptConfigType = None,
+        test_cfg: OptConfigType = None,
+        data_preprocessor: OptConfigType = None,
+        pretrained: Optional[str] = None,
+        init_cfg: OptMultiConfig = None,
+    ):
+        super().__init__(backbone=backbone, decode_head=decode_head, data_preprocessor=data_preprocessor, init_cfg=init_cfg)
+
+        self.model = STRobustNet()    
+        self._init_decode_head(decode_head)
+        self._init_auxiliary_head(auxiliary_head)
+
+        self.train_cfg = train_cfg
+        self.test_cfg = test_cfg
+
+    def encode_decode(self, inputs: Tensor,
+                      batch_img_metas: List[dict]) -> Tensor:
+        imgs1, imgs2 = inputs[:, :3, :, :], inputs[:, 3:, :, :]
+        change_maps = self.model(imgs1, imgs2)
+        seg_logits = self.decode_head.predict(change_maps, batch_img_metas,
+                                        self.test_cfg)
+        return seg_logits
+
+    def loss(self, inputs: Tensor, data_samples: SampleList) -> dict:
+        losses = dict()
+
+        imgs1, imgs2 = inputs[:, :3, :, :], inputs[:, 3:, :, :]
+        change_maps = self.model(imgs1, imgs2)
+        loss_decode = self._decode_head_forward_train(change_maps, data_samples)
+        losses.update(loss_decode)
+        if self.with_auxiliary_head:
+            loss_aux = self._auxiliary_head_forward_train(change_maps, data_samples)
+            losses.update(loss_aux)
+        return losses
+
+
+@MODELS.register_module()
+class MM_ISDANet(EncoderDecoder):
+    def __init__(
+        self,
+        backbone: ConfigType = None,
+        decode_head: ConfigType = None,
+        neck: OptConfigType = None,
+        auxiliary_head: OptConfigType = None,
+        train_cfg: OptConfigType = None,
+        test_cfg: OptConfigType = None,
+        data_preprocessor: OptConfigType = None,
+        pretrained: Optional[str] = None,
+        init_cfg: OptMultiConfig = None,
+    ):
+        super().__init__(backbone=backbone, decode_head=decode_head, data_preprocessor=data_preprocessor, init_cfg=init_cfg)
+
+        self.model = ISDANet()    
+        self._init_decode_head(decode_head)
+        self._init_auxiliary_head(auxiliary_head)
+
+        self.train_cfg = train_cfg
+        self.test_cfg = test_cfg
+
+    def encode_decode(self, inputs: Tensor,
+                      batch_img_metas: List[dict]) -> Tensor:
+        imgs1, imgs2 = inputs[:, :3, :, :], inputs[:, 3:, :, :]
+        change_maps = self.model(imgs1, imgs2)
+        seg_logits = self.decode_head.predict(change_maps, batch_img_metas,
+                                        self.test_cfg)
+        return seg_logits
+
+    def loss(self, inputs: Tensor, data_samples: SampleList) -> dict:
+        losses = dict()
+
+        imgs1, imgs2 = inputs[:, :3, :, :], inputs[:, 3:, :, :]
+        change_maps = self.model(imgs1, imgs2)
+        loss_decode = self._decode_head_forward_train(change_maps, data_samples)
+        losses.update(loss_decode)
+        if self.with_auxiliary_head:
+            loss_aux = self._auxiliary_head_forward_train(change_maps, data_samples)
+            losses.update(loss_aux)
+        return losses
 
 
 @MODELS.register_module()
