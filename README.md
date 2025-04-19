@@ -107,11 +107,17 @@ pip install kornia
 [configs/rscd/strobstnet.py](https://ieeexplore.ieee.org/document/10879578)  
 
 
-Train command
+### Train command
 
 ```
 python tools/train.py configs/rscd/bit.py
 ```
+
+### The train command of our [LENet](https://arxiv.org/abs/2501.10905) (Contains the complete training, validation and testing process).
+```
+bash tools/train.sh
+```
+
 
 Other command please refer the [mmsegmentation]([GitHub - open-mmlab/mmsegmentation: OpenMMLab Semantic Segmentation Toolbox and Benchmark.](https://github.com/open-mmlab/mmsegmentation))
 
