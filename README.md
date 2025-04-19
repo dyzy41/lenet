@@ -1,4 +1,5 @@
-# MMRSCD Configuration Tutorial
+# [A Remote Sensing Image Change Detection Method Integrating Layer Exchange and Channel-Spatial Differences](https://arxiv.org/abs/2501.10905)
+# OPEN-RSCD Configuration Tutorial
 
 ## Data Prepared
 
@@ -102,3 +103,5 @@ python tools/train.py configs/rscd/bit.py
 ```
 
 Other command please refer the [mmsegmentation]([GitHub - open-mmlab/mmsegmentation: OpenMMLab Semantic Segmentation Toolbox and Benchmark.](https://github.com/open-mmlab/mmsegmentation))
+
+# Other Change Detection Projects, please refer [EfficientCD](https://github.com/dyzy41/mmrscd), [ChangeCLIP](https://github.com/dyzy41/ChangeCLIP)
