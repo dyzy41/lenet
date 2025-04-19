@@ -85,15 +85,25 @@ pip install kornia
 ### We have provided training configuration files for some classic change detection algorithms. As follows:
 
 ```
-configs/rscd/afcf3d.py
-configs/rscd/bit.py
-configs/rscd/cdnext.py
-configs/rscd/cgnet.py
-configs/rscd/dminet.py
-configs/rscd/elgcnet.py
-configs/rscd/gasnet.py
-configs/rscd/hatnet.py
-configs/rscd/mscanet.py
+[configs/rscd/afcf3d.py](https://ieeexplore.ieee.org/document/10221754)
+[configs/rscd/bit.py](https://ieeexplore.ieee.org/document/9491802)
+[configs/rscd/cdnext.py](https://www.sciencedirect.com/science/article/pii/S1569843224001213)
+[configs/rscd/cgnet.py](https://ieeexplore.ieee.org/document/10234560?denied=)
+[configs/rscd/darnet.py](https://ieeexplore.ieee.org/document/9734050)
+[configs/rscd/dminet.py](https://ieeexplore.ieee.org/document/10034787)
+[configs/rscd/elgcnet.py](https://ieeexplore.ieee.org/abstract/document/10423067)
+[configs/rscd/gasnet.py](https://www.sciencedirect.com/science/article/pii/S0924271623000849)
+[configs/rscd/hanet.py](https://ieeexplore.ieee.org/abstract/document/10093022)
+[configs/rscd/hatnet.py](https://ieeexplore.ieee.org/document/10462583)
+[configs/rscd/hcgmnet.py](https://ieeexplore.ieee.org/document/10283341)
+[configs/rscd/isdanet.py](https://ieeexplore.ieee.org/document/10879780)
+[configs/rscd/lunet.py](https://ieeexplore.ieee.org/document/9301184)
+[configs/rscd/mscanet.py](https://ieeexplore.ieee.org/document/9780164)
+[configs/rscd/p2v.py](https://ieeexplore.ieee.org/document/9975266)
+[configs/rscd/rctnet.py](https://ieeexplore.ieee.org/document/10687791)
+[configs/rscd/scratch_former.py](https://ieeexplore.ieee.org/document/10489990)
+[configs/rscd/stanet.py](https://www.mdpi.com/2072-4292/12/10/1662)
+[configs/rscd/strobstnet.py](https://ieeexplore.ieee.org/document/10879578)
 ```
 
 Train command
@@ -105,3 +115,5 @@ python tools/train.py configs/rscd/bit.py
 Other command please refer the [mmsegmentation]([GitHub - open-mmlab/mmsegmentation: OpenMMLab Semantic Segmentation Toolbox and Benchmark.](https://github.com/open-mmlab/mmsegmentation))
 
 # Other Change Detection Projects, please refer [EfficientCD](https://github.com/dyzy41/mmrscd), [ChangeCLIP](https://github.com/dyzy41/ChangeCLIP)
+
+# 
