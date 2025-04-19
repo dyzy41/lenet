@@ -116,4 +116,18 @@ Other command please refer the [mmsegmentation]([GitHub - open-mmlab/mmsegmentat
 
 # Other Change Detection Projects, please refer [EfficientCD](https://github.com/dyzy41/mmrscd), [ChangeCLIP](https://github.com/dyzy41/ChangeCLIP)
 
-# 
+## Citation 
+
+ If you use this code for your research, please cite our papers.  
+
+```
+@misc{dong2025remotesensingimagechange,
+      title={A Remote Sensing Image Change Detection Method Integrating Layer Exchange and Channel-Spatial Differences}, 
+      author={Sijun Dong and Fangcheng Zuo and Geng Chen and Siming Fu and Xiaoliang Meng},
+      year={2025},
+      eprint={2501.10905},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2501.10905}, 
+}
+```
