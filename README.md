@@ -31,7 +31,7 @@ Use tools/general/write_path.py to generate a txt file for the dataset path. The
 ***
 
 # Environment
-First, you can read the environment.txt and environment.yml. If you install this env by yourself, please check the follow steps.
+### First, you can read the [environment.txt](environment.txt) and [environment.yml](environment.yml). If you install this env by yourself, please check the follow steps.
 
 ### Create a conda environment with python3.8 or above installed.
 
