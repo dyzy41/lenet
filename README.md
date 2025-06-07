@@ -211,10 +211,8 @@ Other command please refer the [mmsegmentation]([GitHub - open-mmlab/mmsegmentat
 
 ```
 @Article{Dong_IeeeJSelTopApplEarthObsRemoteSens_2025_p1,
-    author =   {Sijun Dong and Fangcheng Zuo and Geng Chen and Siming Fu and Xiaoliang
-             Meng},
-    title =    {{A Remote Sensing Image Change Detection Method Integrating Layer-
-             Exchange and Channel-Spatial Differences}},
+    author =   {Sijun Dong and Fangcheng Zuo and Geng Chen and Siming Fu and Xiaoliang Meng},
+    title =    {{A Remote Sensing Image Change Detection Method Integrating Layer-Exchange and Channel-Spatial Differences}},
     journal =  {Ieee J. Sel, Top, Appl, Earth Obs. Remote. Sens.},
     year =     2025,
     pages =    {1--17},
