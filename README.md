@@ -1,4 +1,4 @@
-# [A Remote Sensing Image Change Detection Method Integrating Layer Exchange and Channel-Spatial Differences](https://arxiv.org/abs/2501.10905)
+# [A Remote Sensing Image Change Detection Method Integrating Layer Exchange and Channel-Spatial Differences](https://ieeexplore.ieee.org/document/11024553)
 # OPEN-RSCD Configuration Tutorial
 
 ## Data Prepared
@@ -105,6 +105,7 @@ pip install kornia
 [configs/rscd/scratch_former.py](https://ieeexplore.ieee.org/document/10489990)  
 [configs/rscd/stanet.py](https://www.mdpi.com/2072-4292/12/10/1662)  
 [configs/rscd/strobstnet.py](https://ieeexplore.ieee.org/document/10879578)  
+[configs/rscd/c2fnet.py](https://ieeexplore.ieee.org/document/10445496)  
 
 
 ### Train command
@@ -113,7 +114,7 @@ pip install kornia
 python tools/train.py configs/rscd/bit.py
 ```
 
-### The train command of our [LENet](https://arxiv.org/abs/2501.10905) (Contains the complete training, validation and testing process).
+### The train command of our [LENet](https://ieeexplore.ieee.org/document/11024553) (Contains the complete training, validation and testing process).
 ```
 bash tools/train.sh
 ```
@@ -128,13 +129,14 @@ Other command please refer the [mmsegmentation]([GitHub - open-mmlab/mmsegmentat
  If you use this code for your research, please cite our papers.  
 
 ```
-@misc{dong2025remotesensingimagechange,
-      title={A Remote Sensing Image Change Detection Method Integrating Layer Exchange and Channel-Spatial Differences}, 
-      author={Sijun Dong and Fangcheng Zuo and Geng Chen and Siming Fu and Xiaoliang Meng},
-      year={2025},
-      eprint={2501.10905},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2501.10905}, 
+@Article{Dong_IeeeJSelTopApplEarthObsRemoteSens_2025_p1,
+    author =   {Sijun Dong and Fangcheng Zuo and Geng Chen and Siming Fu and Xiaoliang
+             Meng},
+    title =    {{A Remote Sensing Image Change Detection Method Integrating Layer-
+             Exchange and Channel-Spatial Differences}},
+    journal =  {Ieee J. Sel, Top, Appl, Earth Obs. Remote. Sens.},
+    year =     2025,
+    pages =    {1--17},
+    doi =      {10.1109/JSTARS.2025.3576831}  ,
 }
 ```
