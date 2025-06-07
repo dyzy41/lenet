@@ -81,7 +81,88 @@ pip install timm
 pip install kornia
 ```
 
+## Experiments
+COMPARISON RESULTS ON THE CLCD DATASET
+| Model            | IoU   | F1    | Rec   | Prec  |
+| ---------------- | ----- | ----- | ----- | ----- |
+| ACABFNet [41]    | 51.45 | 67.94 | 63.63 | 72.88 |
+| STANet [42]      | 51.49 | 67.97 | 64.16 | 72.26 |
+| P2V [43]         | 54.10 | 70.22 | 65.93 | 75.11 |
+| MSCANet [44]     | 55.83 | 71.65 | 67.07 | 76.91 |
+| HATNet [45]      | 56.90 | 72.53 | 69.42 | 75.94 |
+| BIT [46]         | 58.36 | 73.71 | 66.63 | 82.47 |
+| DSIFN [24]       | 59.42 | 74.54 | 67.86 | 82.69 |
+| MIN-Net [47]     | 62.08 | 76.60 | 75.70 | 77.53 |
+| AMTNet [48]      | 62.35 | 76.81 | 75.06 | 78.64 |
+| SAM-CD2 [49]     | 62.54 | 76.95 | 71.60 | 83.17 |
+| CGNet [50]       | 62.67 | 77.05 | 71.71 | 83.25 |
+| CACG-Net [51]    | 64.76 | 78.61 | 76.71 | 80.61 |
+| EfficientCD [33] | 65.14 | 78.89 | 75.83 | 82.21 |
+| LENet            | 66.83 | 80.12 | 77.09 | 83.39 |
+
+<hr>
+COMPARISON RESULTS ON THE LEVIR-CD DATASET
+
+| Model               | IoU   |   F1   |  Rec   | Prec   |
+|---------------------|-------|--------|--------|--------|
+| STANet [35]         | 81.85 |  90.02 |  87.13 |  93.10 |
+| ChangeFormer [52]   | 82.66 |  90.50 |  90.18 |  90.83 |
+| Changer [25]        | --    |  92.06 |  90.56 |  93.61 |
+| SSCD [37]           | 82.78 |  90.58 |  89.08 |  92.12 |
+| CDMamba [53]        | 83.07 |  90.75 |  90.08 |  91.43 |
+| DMATNet [27]        | 84.13 |  90.75 |  89.98 |  91.56 |
+| GASNet [54]         | --    |  91.21 |  90.62 |  91.82 |
+| Hybrid-MambaCD [55] | 84.31 |  91.48 |  90.78 |  92.20 |
+| ACAHNet [56]        | 84.35 |  91.51 |  90.68 |  92.36 |
+| HATNet [45]         | 84.41 |  91.55 |  90.23 |  92.90 |
+| ConMamba [57]       | --    |  91.70 |  90.06 |  93.14 |
+| FEMCD [58]          | --    |  92.02 |  90.88 |  93.18 |
+| IMDCD [59]          | 84.66 |  91.34 |  91.12 |  91.56 |
+| DED-SAM [60]        | 85.11 |  92.00 |  90.47 |  93.51 |
+| PCAANet [61]        | 85.22 |  92.02 |  90.67 |  93.41 |
+| MSA [62]            | 85.34 |  92.09 |  90.55 |  93.68 |
+| HFIFNet [63]        | 85.46 |  92.16 |  90.09 |  93.37 |
+| EfficientCD [33]    | 85.55 |  92.21 |  91.22 |  93.23 |
+| SAM-CD2 [49]        | 85.59 |  92.24 |  90.93 |  93.58 |
+| CACG-Net [51]       | 85.68 |  92.29 |  92.41 |  92.16 |
+| CDNeXt [35]         | 85.86 |  92.39 |  90.92 |  93.91 |
+| RSBuilding [64]     | 86.19 |  92.59 |  91.80 |  93.39 |
+| LENet               | 86.30 |  92.64 |  91.22 |  94.12 |
+
+<hr>
+COMPARISON RESULTS ON THE S2LOOKING DATASET
+
+| Model         |  IoU  |   F1   |  Rec   |  Prec  |
+|---------------|-------|--------|--------|--------|
+| BIT [46]      | 47.94 |  64.81 |  58.15 |  73.20 |
+| HATNet [45]   | 47.08 |  64.02 |  60.90 |  67.48 |
+| FHD [65]      | 47.33 |  64.25 |  56.71 |  74.09 |
+| CGNet [50]    | 47.41 |  64.33 |  59.38 |  70.18 |
+| SAM-CD [66]   | 48.29 |  65.13 |  58.92 |  72.80 |
+| DMINet [26]   | 48.33 |  65.16 |  62.13 |  68.51 |
+| PCAANet [61]  | 48.54 |  65.36 |  61.54 |  69.68 |
+| HFIFNet [63]  | 48.54 |  65.35 |  61.04 |  70.33 |
+| CDNeXt [35]   | 50.05 |  66.71 |  63.08 |  70.78 |
+| Changer [25]  | 50.47 |  67.08 |  62.04 |  73.01 |
+| LENet         | 51.19 |  67.71 |  61.90 |  74.72 |
+
+<hr>
+QUANTITATIVE RESULTS ON THE PX-CLCD DATASET
+
+| Model           |  IoU  |   F1   |  Rec   |  Prec  |
+|-----------------|-------|--------|--------|--------|
+| HATNet [45]     | 88.99 |  94.18 |  93.83 |  94.53 |
+| MSCANet [44]    | 89.00 |  94.18 |  93.95 |  94.41 |
+| BIT [46]        | 90.78 |  95.17 |  94.80 |  95.54 |
+| GASNet [54]     | 92.51 |  96.11 |  96.42 |  95.80 |
+| DMINet [26]     | 92.83 |  96.28 |  96.31 |  96.25 |
+| SNUNet3+ [67]   | 93.61 |  96.64 |  96.79 |  96.60 |
+| CGNet [50]      | 93.82 |  96.81 |  97.33 |  96.30 |
+| LENet           | 94.86 |  97.36 |  97.08 |  97.65 |
+
 ****
+
+# Remote Sensing Change Detection Algorithms
 
 ### We have provided training configuration files for some classic change detection algorithms. As follows:
 
@@ -126,7 +207,7 @@ Other command please refer the [mmsegmentation]([GitHub - open-mmlab/mmsegmentat
 
 ## Citation 
 
- If you use this code for your research, please cite our papers.  
+###  If you use this code for your research, please cite our papers.  
 
 ```
 @Article{Dong_IeeeJSelTopApplEarthObsRemoteSens_2025_p1,
