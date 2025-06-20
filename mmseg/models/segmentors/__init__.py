@@ -18,7 +18,7 @@ from .cd_models.MMCD import \
     MM_HCGMNet, MM_AFCF3D, MM_ELGCNet, MM_HATNet, \
     MM_DMINet, MM_CDNeXt, MM_GASNet, MM_HANet, \
     MM_ISDANet, MM_STRobustNet, MM_ScratchFormer, \
-    MM_DARNet, MM_BASNet, MM_RCTNet, MM_C2FNet
+    MM_DARNet, MM_BASNet, MM_RCTNet, MM_C2FNet, MM_FTANet
 
 from .cd_models.MMLENet import MM_LENet4
 
@@ -31,7 +31,8 @@ __all__ = [
     'MM_MSCANet', 'MM_CGNet', 'MM_HCGMNet', 'EfficientCD', 'EfficientCD_Resnet',
     'EfficientCD_Swin', 'MM_AFCF3D', 'MM_ELGCNet', 'MM_HATNet', 'MM_DMINet',
     'MM_CDNeXt', 'MM_GASNet', 'MM_HANet', 'MM_ISDANet', 'MM_STRobustNet',
-     'MM_ScratchFormer', 'MM_DARNet', 'MM_BASNet', 'MM_RCTNet', 'MM_C2FNet',
+     'MM_ScratchFormer', 'MM_DARNet', 'MM_BASNet', 'MM_RCTNet', 'MM_C2FNet', 
+     'MM_FTANet',
 
 
     'MM_LENet4'
