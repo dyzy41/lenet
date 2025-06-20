@@ -167,26 +167,29 @@ QUANTITATIVE RESULTS ON THE PX-CLCD DATASET
 ### We have provided training configuration files for some classic change detection algorithms. As follows:
 
 
-[configs/rscd/afcf3d.py](https://ieeexplore.ieee.org/document/10221754)  
-[configs/rscd/bit.py](https://ieeexplore.ieee.org/document/9491802)  
-[configs/rscd/cdnext.py](https://www.sciencedirect.com/science/article/pii/S1569843224001213)  
-[configs/rscd/cgnet.py](https://ieeexplore.ieee.org/document/10234560?denied=)  
-[configs/rscd/darnet.py](https://ieeexplore.ieee.org/document/9734050)  
-[configs/rscd/dminet.py](https://ieeexplore.ieee.org/document/10034787)  
-[configs/rscd/elgcnet.py](https://ieeexplore.ieee.org/abstract/document/10423067)  
-[configs/rscd/gasnet.py](https://www.sciencedirect.com/science/article/pii/S0924271623000849)  
-[configs/rscd/hanet.py](https://ieeexplore.ieee.org/abstract/document/10093022)  
-[configs/rscd/hatnet.py](https://ieeexplore.ieee.org/document/10462583)  
-[configs/rscd/hcgmnet.py](https://ieeexplore.ieee.org/document/10283341)  
-[configs/rscd/isdanet.py](https://ieeexplore.ieee.org/document/10879780)  
-[configs/rscd/lunet.py](https://ieeexplore.ieee.org/document/9301184)  
-[configs/rscd/mscanet.py](https://ieeexplore.ieee.org/document/9780164)  
-[configs/rscd/p2v.py](https://ieeexplore.ieee.org/document/9975266)  
-[configs/rscd/rctnet.py](https://ieeexplore.ieee.org/document/10687791)  
-[configs/rscd/scratch_former.py](https://ieeexplore.ieee.org/document/10489990)  
-[configs/rscd/stanet.py](https://www.mdpi.com/2072-4292/12/10/1662)  
-[configs/rscd/strobstnet.py](https://ieeexplore.ieee.org/document/10879578)  
-[configs/rscd/c2fnet.py](https://ieeexplore.ieee.org/document/10445496)  
+| 配置文件                       | 模型名称                                                 | 期刊          | 时间 |
+|--------------------------------|----------------------------------------------------------|---------------|------|
+| `configs/rscd/afcf3d.py`       | [AFCF3D](https://ieeexplore.ieee.org/document/10221754)   | TGRS          | 2023 |
+| `configs/rscd/bit.py`          | [BIT](https://ieeexplore.ieee.org/document/9491802)       | TGRS          | 2021 |
+| `configs/rscd/cdnext.py`       | [CDNeXt](https://www.sciencedirect.com/science/article/pii/S1569843224001213) | JAG         | 2024 |
+| `configs/rscd/cgnet.py`        | [CGNet](https://ieeexplore.ieee.org/document/10234560)    | JSTAR         | 2023 |
+| `configs/rscd/darnet.py`       | [DARNet](https://ieeexplore.ieee.org/document/9734050)    | TGRS          | 2022 |
+| `configs/rscd/dminet.py`       | [DMINet](https://ieeexplore.ieee.org/document/10034787)   | TGRS          | 2023 |
+| `configs/rscd/elgcnet.py`      | [ELGCNet](https://ieeexplore.ieee.org/abstract/document/10423067) | TGRS    | 2024 |
+| `configs/rscd/gasnet.py`       | [GASNet](https://www.sciencedirect.com/science/article/pii/S0924271623000849) | ISPRS       | 2023 |
+| `configs/rscd/hanet.py`        | [HANet](https://ieeexplore.ieee.org/abstract/document/10093022) | JSTAR    | 2023 |
+| `configs/rscd/hatnet.py`       | [HATNet](https://ieeexplore.ieee.org/document/10462583)   | TIM           | 2024 |
+| `configs/rscd/hcgmnet.py`      | [HCGMNet](https://ieeexplore.ieee.org/document/10283341)  | IGARSS        | 2023 |
+| `configs/rscd/isdanet.py`      | [ISDANet](https://ieeexplore.ieee.org/document/10879780)  | TGRS          | 2025 |
+| `configs/rscd/lunet.py`        | [LU-Net](https://ieeexplore.ieee.org/document/9301184)    | GRSL          | 2020 |
+| `configs/rscd/mscanet.py`      | [MSCANet](https://ieeexplore.ieee.org/document/9780164)   | JSTAR         | 2022 |
+| `configs/rscd/p2v.py`          | [P2V](https://ieeexplore.ieee.org/document/9975266)       | TIP           | 2022 |
+| `configs/rscd/rctnet.py`       | [RCTNet](https://ieeexplore.ieee.org/document/10687791)   | ICME          | 2024 |
+| `configs/rscd/scratch_former.py` | [ScratchFormer](https://ieeexplore.ieee.org/document/10489990) | TGRS    | 2024 |
+| `configs/rscd/stanet.py`       | [STANet](https://www.mdpi.com/2072-4292/12/10/1662)       | Remote Sensing| 2020 |
+| `configs/rscd/strobstnet.py`   | [STRobustNet](https://ieeexplore.ieee.org/document/10879578) | TGRS      | 2025 |
+| `configs/rscd/c2fnet.py`       | [C2FNet](https://ieeexplore.ieee.org/document/10445496)   | TGRS          | 2024 |
+
 
 
 ### Train command
