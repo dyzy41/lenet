@@ -20,8 +20,9 @@ data_preprocessor = dict(
     bgr_to_rgb=True,
     pad_val=0,
     seg_pad_val=255)
+
 model = dict(
-    type='MM_C2FNet',
+    type='MM_FTANet',
     data_preprocessor=data_preprocessor,
     pretrained='open-mmlab://resnet50_v1c',
     backbone=dict(
@@ -41,11 +42,13 @@ model = dict(
         in_channels=256,
         channels=512,
         num_classes=2,
+        threshold=0.6,
         out_channels=1,
         loss_decode=dict(
             type='CrossEntropyLoss', use_sigmoid=True, loss_weight=1.0)),
     auxiliary_head=
-        dict(
+        [
+            dict(
         type='NullDecodeHead',
         in_index=1,
         in_channels=256,
@@ -54,7 +57,6 @@ model = dict(
         out_channels=1,
         loss_decode=dict(
             type='CrossEntropyLoss', use_sigmoid=True, loss_weight=0.5)),
-    auxiliary_head=
         dict(
         type='NullDecodeHead',
         in_index=2,
@@ -63,7 +65,7 @@ model = dict(
         num_classes=2,
         out_channels=1,
         loss_decode=dict(
-            type='CrossEntropyLoss', use_sigmoid=True, loss_weight=0.5)),
+            type='CrossEntropyLoss', use_sigmoid=True, loss_weight=0.5))],
     # model training and testing settings
     train_cfg=dict(),
     # test_cfg=dict(mode='whole'))
@@ -76,7 +78,7 @@ optim_wrapper = dict(
     _delete_=True,
     type='OptimWrapper',
     optimizer=dict(
-        type='AdamW', lr=0.0003, betas=(0.9, 0.999), weight_decay=0.01),
+        type='AdamW', lr=0.0001, betas=(0.9, 0.999), weight_decay=0.01),
     paramwise_cfg=dict(
         bypass_duplicate=True,
         custom_keys={
@@ -112,19 +114,19 @@ train_pipeline = [
     dict(type='PackSegInputs')
 ]
 
-train_dataloader = dict(batch_size=16,
-                        num_workers=8,
+train_dataloader = dict(batch_size=32,
+                        num_workers=16,
                         dataset=dict(data_root=data_root,
                                     pipeline=train_pipeline))
-val_dataloader = dict(batch_size=16,
-                        num_workers=8,
+val_dataloader = dict(batch_size=32,
+                        num_workers=16,
                         dataset=dict(data_root=data_root))
-test_dataloader = dict(batch_size=16,
-                        num_workers=8,
+test_dataloader = dict(batch_size=32,
+                        num_workers=16,
                         dataset=dict(data_root=data_root))
 
 # training schedule for 20k
-train_cfg = dict(type='IterBasedTrainLoop', max_iters=max_iters, val_interval=200)
+train_cfg = dict(type='IterBasedTrainLoop', max_iters=max_iters, val_interval=500)
 val_cfg = dict(type='ValLoop')
 test_cfg = dict(type='TestLoop')
 default_hooks = dict(

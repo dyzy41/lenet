@@ -4,10 +4,10 @@ import torch.nn.functional as F
 
 from einops import rearrange
 
-import MobileNetV2
-from TSINN import Trans, INN
-from SAC import kernel_size, SFCA, SpectralGatingNetwork
-from LOG import  log_feature
+from mmseg.models.segmentors.cd_models.FTANet import MobileNetV2
+from mmseg.models.segmentors.cd_models.FTANet.TSINN import Trans, INN
+from mmseg.models.segmentors.cd_models.FTANet.SAC import kernel_size, SFCA, SpectralGatingNetwork
+# from LOG import  log_feature
 
 
 
@@ -177,9 +177,9 @@ class NeighborFeatureAggregation(nn.Module):
 
         log_list = [self.conv_scalec21(c2)]
         feature_name_list = ['1']
-        log_feature(log_list=log_list, module_name=module_name,
-                    feature_name_list=feature_name_list,
-                    img_name=img_name, module_output=True)
+        # log_feature(log_list=log_list, module_name=module_name,
+        #             feature_name_list=feature_name_list,
+        #             img_name=img_name, module_output=True)
         return s11, s12, s21, s22, s31, s32, s41, s42
 
 class TemporalFeatureFusionModule(nn.Module):
@@ -232,15 +232,15 @@ class TemporalFusionModule(nn.Module):
 
         log_list = [m1]
         feature_name_list = ['3']
-        log_feature(log_list=log_list, module_name=module_name,
-                    feature_name_list=feature_name_list,
-                    img_name=img_name, module_output=True)
+        # log_feature(log_list=log_list, module_name=module_name,
+        #             feature_name_list=feature_name_list,
+        #             img_name=img_name, module_output=True)
 
         log_list1 = [c2]
         feature_name_list1 = ['4']
-        log_feature(log_list=log_list1, module_name=module_name,
-                    feature_name_list=feature_name_list1,
-                    img_name=img_name, module_output=True)
+        # log_feature(log_list=log_list1, module_name=module_name,
+        #             feature_name_list=feature_name_list1,
+        #             img_name=img_name, module_output=True)
 
         return c2, c3, c4, c5
 
