@@ -112,7 +112,17 @@ pip install kornia
 | `configs/rscd/ftanet.py`       | [FTANet](https://ieeexplore.ieee.org/abstract/document/10824909)   | JSTAR          | 2025 |
 
 
-### Train command
+# Remote Sensing Change Detection Datasets
+
+[SYSU-CD](https://pan.baidu.com/s/1g9t_PPPlYOjJN5J9F6tt2Q?pwd=rscd) | 
+[LEVIR-CD](https://pan.baidu.com/s/1HcAsf5YgcxRjK-DbwLUK1A?pwd=rscd) | 
+[PX-CLCD](https://pan.baidu.com/s/1IGYmsGfWGlOTsPR3P-WwHw?pwd=rscd) | 
+[WaterCD](https://pan.baidu.com/s/1HcdXgC0A2Zpn8kHIUby0pQ?pwd=rscd) | 
+[CDD](https://pan.baidu.com/s/1vh1Ztk8zLqCrtERh7xJt3Q?pwd=rscd) | 
+[CLCD](https://pan.baidu.com/s/1_op60cPouU1cr_KkDk4SIg?pwd=rscd)
+
+
+# Train command
 
 ```
 python tools/train.py configs/rscd/bit.py
